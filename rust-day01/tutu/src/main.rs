@@ -70,6 +70,15 @@ fn test_plus_one(x: i8) -> (i8, i8) {
     (x, x + 1)
 }
 
+fn mehtod_point_as_context(param: i8) {
+    println!("This is a method point as context");
+    let (x,y) = test_plus_one(param);
+    println!("x: {}, y: {}", x, y);
+    let g = test_param_type2;
+    let result = g(50, true);
+    println!("result: {}", result);
+}
+
 /// #[rust Application]
 fn main() {
     println!("Hello, world!");
@@ -90,4 +99,7 @@ fn main() {
     let (a, b) = test_plus_one(5);
     // 测试返回元组
     println!("a: {}, b: {}", a, b);
+    // 函数指针也可以作为变量使用
+    mehtod_point_as_context(1);
 }
+
