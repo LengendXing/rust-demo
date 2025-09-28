@@ -90,7 +90,14 @@ fn test_array() {
     let mut d = [1, 2, 3];
     d[0] = 10;
     println!("d: {:?}", d);
+    let c: [i32; 3] = [1, 2, 3];
+    // 直接定义为字符串，并且长度为3
+    let v = ["my value"; 3]; //["my value", "my value", "my value"];
+    println!("c: {:?}, v: {:?}", c, v);
+    let e: [i32; 0] = []; // 空数组
 }
+
+
 
 /// #[rust Application]
 fn main() {
