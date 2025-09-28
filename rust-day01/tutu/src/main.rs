@@ -79,6 +79,19 @@ fn mehtod_point_as_context(param: i8) {
     println!("result: {}", result);
 }
 
+/// rust中数据居然可以定义为可变的,在java中是不可变的
+/// 数组的定义
+fn test_array() {
+    let a = [1, 2, 3]; // a[0] = 1, a[1] = 2, a[2] = 3
+    let b: [i32; 4] = [1, 2, 3, 2]; // b[0] = 1, b[1] = 2, b[2] = 3
+    let c = [0; 10]; // c[0] = 0, c[1] = 0, c[2] = 0, c[3] = 0, c[4] = 0, c[5] = 0, c[6] = 0, c[7] = 0, c[8] = 0, c[9] = 0
+    println!("a: {:?}, b: {:?}, c: {:?}", a, b, c);
+    // 测试可变
+    let mut d = [1, 2, 3];
+    d[0] = 10;
+    println!("d: {:?}", d);
+}
+
 /// #[rust Application]
 fn main() {
     println!("Hello, world!");
@@ -101,5 +114,7 @@ fn main() {
     println!("a: {}, b: {}", a, b);
     // 函数指针也可以作为变量使用
     mehtod_point_as_context(1);
+    // 测试数组
+    test_array();
 }
 
