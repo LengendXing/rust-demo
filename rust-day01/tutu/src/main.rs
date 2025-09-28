@@ -57,11 +57,37 @@ fn test_static_var() {
     println!("M: {}", unsafe { M });
 }
 
+fn test_param_type(x: i32, y: bool) {
+    println!("x: {}, y: {}", x, y);
+}
+
+fn test_param_type2(x: i8, y: bool) -> i8 {
+    println!("x: {}, y: {}", x, y);
+    x + 1
+}
+
+fn test_plus_one(x: i8) -> (i8, i8) {
+    (x, x + 1)
+}
+
 /// #[rust Application]
 fn main() {
     println!("Hello, world!");
+    // 测试变量声明和赋值
     do_const_dif();
+    // 以 JavaScript 语法来写 Rust
     write_rust_as_java_script();
+    // 测试多次定义
     test_muti_define();
+    // 测试静态变量
     test_static_var();
+    // 测试参数类型
+    test_param_type(10, true);
+    // 测试表达式返回值省略
+    let result = test_param_type2(20, false);
+    println!("result: {}", result);
+    // 测试操作元组
+    let (a, b) = test_plus_one(5);
+    // 测试返回元组
+    println!("a: {}, b: {}", a, b);
 }
